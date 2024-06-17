@@ -2,7 +2,13 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
+import {
+  Bars3Icon,
+  ChevronDoubleDownIcon,
+  XMarkIcon,
+} from '@heroicons/react/16/solid';
+import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
+import { ChevronDownIcon } from 'lucide-react';
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,6 +39,17 @@ function Header() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
+        <Popover.Group className="hidden lg:flex lg:gap-x-12">
+          <Popover className="relative">
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white">
+              Stays
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-white"
+                aria-hidden="true"
+              />
+            </Popover.Button>
+          </Popover>
+        </Popover.Group>
       </nav>
     </header>
   );
