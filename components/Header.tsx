@@ -1,14 +1,47 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import Link from 'next/link';
 import {
   Bars3Icon,
+  ChatBubbleLeftEllipsisIcon,
   ChevronDoubleDownIcon,
+  PaperAirplaneIcon,
   XMarkIcon,
 } from '@heroicons/react/16/solid';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from 'lucide-react';
+import {
+  ChevronDownIcon,
+  HomeIcon,
+  PhoneIcon,
+  PlayCircleIcon,
+} from 'lucide-react';
+
+const products = [
+  {
+    name: 'Book a Stay',
+    description: 'Get a better understanding of your traffic',
+    href: '#',
+    icon: HomeIcon,
+  },
+  {
+    name: 'Book a Flight',
+    description: 'Speak directly to your customers',
+    href: '#',
+    icon: PaperAirplaneIcon,
+  },
+  {
+    name: 'Contact our Support Team',
+    description: "Your customers' data will be safe and secure",
+    href: '#',
+    icon: ChatBubbleLeftEllipsisIcon,
+  },
+];
+
+const callsToAction = [
+  { name: 'See Demo Booking', href: '#', icon: PlayCircleIcon },
+  { name: 'Contact Support', href: '#', icon: PhoneIcon },
+];
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,6 +81,28 @@ function Header() {
                 aria-hidden="true"
               />
             </Popover.Button>
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
+            >
+              <Popover.Panel className="absolute bg-white -left-8-top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg ring-1 ring-gray-500/5">
+                <div className="p-4">
+                  {products.map((item) => (
+                    <div
+                      key={item.name}
+                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    >
+                      <p>Hello</p>
+                    </div>
+                  ))}
+                </div>
+              </Popover.Panel>
+            </Transition>
           </Popover>
         </Popover.Group>
       </nav>
