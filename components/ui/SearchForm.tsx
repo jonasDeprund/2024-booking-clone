@@ -79,6 +79,15 @@ function searchForm() {
             )}
           />
         </div>
+        <div className="grid w-full lg:max-w-sm flex-1 items-center gap-1.5">
+          <FormField
+            control={form.control}
+            name="dates"
+            render={({ field }) => (
+              <FormItem className="flex flex-col"></FormItem>
+            )}
+          />
+        </div>
       </form>
     </Form>
   );
