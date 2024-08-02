@@ -1,5 +1,5 @@
+import SearchForm from '@/components/SearchForm';
 import { trending_data } from '@/data/trending';
-import { searchForm } from '@/components/ui/SearchForm';
 
 export default function Home() {
   return (
@@ -7,11 +7,11 @@ export default function Home() {
       <section className="max-w-7xl p-6 mx-auto">
         <h2 className="font-bold text-5xl text-white">Find your next stay</h2>
         <h3 className="text-white py-5 text-xl">
-          serach low prices on hotel, homes and more...
+          search low prices on hotel, homes and more...
         </h3>
       </section>
-      <section className="m-4 mt-0 -mb-14 px-2 lg:px4">
-        <searchForm />
+      <section className="m-4 mt-0 -mb-14 px-2 lg:px-4">
+        <SearchForm />
       </section>
       <section className="mx-auto max-w-7xl mt-10 p-6 bg-white rounded-t-lg">
         <div className="pt-5">
@@ -24,14 +24,13 @@ export default function Home() {
           {trending_data.map((item) => (
             <div key={item.id} className="space-y-1 shrink-0 cursor-pointer">
               <img
-                key={item.id}
                 className="w-80 h-72 object-cover rounded-lg pb-2"
                 src={item.src}
                 alt=""
               />
               <p className="font-bold">{item.title}</p>
-              <p className="">{item.location}</p>
-              <p className="font-light text-sm">{item.description}</p>{' '}
+              <p>{item.location}</p>
+              <p className="font-light text-sm">{item.description}</p>
             </div>
           ))}
         </div>
