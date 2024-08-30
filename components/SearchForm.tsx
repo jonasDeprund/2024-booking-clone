@@ -24,8 +24,8 @@ import { Calendar } from './ui/calendar';
 export const formSchema = z.object({
   location: z.string().min(2).max(50),
   dates: z.object({
-    from: z.date(),
-    to: z.date(),
+    from: z.date({ required_error: 'please check-in date' }),
+    to: z.date({ required_error: 'please check-out date' }),
   }),
   adults: z
     .string()
