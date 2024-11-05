@@ -5,7 +5,7 @@ type Props = {
   searchParams: SearchParams;
 };
 
-type searchParams = {
+export type searchParams = {
   url: URL;
   group_adults: string;
   group_children: string;
