@@ -2,7 +2,7 @@ import { fetchResults } from '@/lib/fetchResults';
 import { notFound } from 'next/navigation';
 
 type Props = {
-  searchParams: searchParams;
+  searchParams: SearchParams;
 };
 
 export type SearchParams = {

@@ -1,11 +1,3 @@
-import { SearchForm } from '@/components/SearchForm';
-export async function fetchResults(searchParams: SearchForm) {
-  const username = process.env.OXYLABS_USERNAME;
-  const password = process.env.OXYLABS_PASSWORD;
-
-  const url = new URL(searchParams.url);
-}
-
 import { SearchParams } from '@/app/search/page';
 
 export async function fetchResults(searchParams: SearchParams) {
