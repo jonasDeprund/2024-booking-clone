@@ -16,4 +16,39 @@ export async function fetchResults(searchParams: SearchParams) {
   });
 
   console.log('scraping url >>>', url.href);
+
+  const body = {
+    source: 'universal',
+    url: url.href,
+    parse: true,
+    render: 'html',
+    parsing_instructions: {
+      listings: {
+        _fns: [
+          {
+            _fn: 'xpath',
+            _args: ["//div[@data-testid='property-card-container“]"],
+          },
+        ],
+        _items: {
+          title: {
+            _fns: [
+              {
+                _fn: 'xpath_one',
+                _args: [".//div[@data-testid='title']/text()"],
+              },
+            ],
+          },
+        },
+      },
+      total_listings: {
+        _fns: [
+          {
+            _fn: 'xpath_one',
+            _args: ['./h1/text()'],
+          },
+        ],
+      },
+    },
+  };
 }
