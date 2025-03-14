@@ -57,6 +57,19 @@ async function SearchPage({ searchParams }: Props) {
                   >
                     {item.title}
                   </Link>
+                  <p className="text-xs">{item.description}</p>
+                </div>
+                <div className="flex flex-col justify-between">
+                  <div className="flex items-start justify-end space-x-2 text-right">
+                    <div>
+                      <p className="font-bold">{item.rating_word}</p>
+                      <p className="text-xs">{item.rating_count}</p>
+                    </div>
+
+                    <p className="flex items-center justify-center font-bold text-sm w-10 h-10 text-white bg-blue-900 rounded-lg flex-shrink-0">
+                      {item.rating || 'N/A'}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
