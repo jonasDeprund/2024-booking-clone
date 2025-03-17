@@ -70,6 +70,10 @@ async function SearchPage({ searchParams }: Props) {
                       {item.rating || 'N/A'}
                     </p>
                   </div>
+                  <div className="text-right">
+                    <p className="text-xs ">{item.booking_metadata}</p>
+                    <p className="text-2xl font-bold">{item.price}</p>
+                  </div>
                 </div>
               </div>
             </div>
